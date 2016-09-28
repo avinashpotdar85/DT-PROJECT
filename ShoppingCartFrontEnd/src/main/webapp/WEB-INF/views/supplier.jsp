@@ -14,15 +14,15 @@
 
 .tg td {
 	font-family: Arial, sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 10px 5px;
 	border-style: solid;
-	border-width: 1px;
+	border-width: 2px;
 	overflow: hidden;
 	word-break: normal;
 	border-color: #ccc;
-	color: #333;
-	background-color: #fff;
+	color: black;
+	background-color: #888;
 }
 
 .tg th {
@@ -42,6 +42,10 @@
 .tg .tg-4eph {
 	background-color: #f9f9f9
 }
+body{
+background-color:#99C68E;
+}
+
 </style>
 </head>
 <body>

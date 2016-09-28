@@ -17,6 +17,7 @@ package com.niit.shoppingcart;
 
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.model.Category;
+import com.niit.util.Util;
 
 	
 
@@ -57,6 +58,10 @@ import com.niit.shopingcart.model.Category;
 		@RequestMapping(value= "/manageCategories/add", method = RequestMethod.POST)
 		public String addCategory(@ModelAttribute("category") Category category){
 			
+			
+			String newID=Util.removeComma(category.getId());
+			category.setId(newID);
+
 		
 				categoryDAO.saveOrUpdate(category);
 			

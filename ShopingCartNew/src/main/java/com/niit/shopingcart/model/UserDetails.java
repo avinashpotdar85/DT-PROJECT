@@ -1,4 +1,4 @@
-package com.niit.shopingcart.model;
+/*package com.niit.shopingcart.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +17,15 @@ public class UserDetails {
 	private String id;
 	
 	private String name;
+	private String role;
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public String getId() {
 		return id;
@@ -71,3 +80,4 @@ public class UserDetails {
 		
 	}
 }
+*/

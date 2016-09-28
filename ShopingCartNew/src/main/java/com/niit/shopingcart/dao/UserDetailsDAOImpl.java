@@ -1,4 +1,4 @@
-package com.niit.shopingcart.dao;
+/*package com.niit.shopingcart.dao;
 
 import java.util.List;
 
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shopingcart.model.UserDetails;
-import com.niit.shopingcart.model.shipping;
 
 @Repository("userDetailsDAO")
 public class UserDetailsDAOImpl implements UserDetailsDAO {
@@ -37,10 +36,7 @@ public class UserDetailsDAOImpl implements UserDetailsDAO {
 		sessionFactory.getCurrentSession().saveOrUpdate(userDetails);
 	}
 
-	@Transactional
-	public void saveOrUpdate(shipping ship) {
-		sessionFactory.getCurrentSession().saveOrUpdate(ship);
-	}
+	
 	
 	@Transactional
 	public String  delete(String id) {
@@ -69,7 +65,23 @@ public class UserDetailsDAOImpl implements UserDetailsDAO {
 		}
 		
 		return null;
+	
+		
+		
 	}
+	
+	@Transactional
+	public UserDetails isValidUser(String id,String password){
+		
+		String hql="from UserDetails where id='" + id+ "' and password= '" + password + "'";
+			
+				Query query=sessionFactory.getCurrentSession().createQuery(hql);
+				return null;
+		       
+	}
+	
+	
+	
 	@Transactional
 	public UserDetails getByName(String name) {
 		String hql = "from UserDetails where name=" + "'"+ name+"'";
@@ -96,3 +108,4 @@ public class UserDetailsDAOImpl implements UserDetailsDAO {
 	}
 
 }
+*/

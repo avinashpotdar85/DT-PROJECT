@@ -21,29 +21,32 @@ public class CategoryTest {
 	
 	CategoryDAO categoryDAO = (CategoryDAO)  context.getBean("categoryDAO");
 	c.setId("CAT_001");
-	c.setName("Mobile_Samsung");
-	c.setDescription("Samsung S5");
+	c.setName("SONATA");
+	c.setDescription("WATCH SONATA S5");
 	categoryDAO.saveOrUpdate(c);
+	
 	c.setId("CAT_002");
-	c.setName("Mobile_Apple");
-	c.setDescription("iPhone");
+	c.setName("RADO");
+	c.setDescription("RADO 007");
 	categoryDAO.saveOrUpdate(c);
 	
 
 	c.setId("CAT_003");
-	c.setName("Tablet");
-	c.setDescription("Tablet product");
+	c.setName("TITAN");
+	c.setDescription("TITAN product");
+	
+	
 	c.setId("CAT_004");
-	c.setName("nokia");
-	c.setDescription("nokia product");
+	c.setName("TISSOT");
+	c.setDescription("TISSOT product");
 	
 	
 	
 	
 	categoryDAO.saveOrUpdate(c);
 	c.setId("CAT_005");
-	c.setName("k5");
-	c.setDescription("nokia product");
+	c.setName("FUSION");
+	c.setDescription("FUSION product");
 	categoryDAO.saveOrUpdate(c);
 	
 

@@ -1,5 +1,4 @@
 package com.niit.shoppingcart;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,11 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 @Controller
 public class LoginController {
-	
-	
-	
+
 	/*
 	 * This controller is to load login page and show login related errors
 	 */
@@ -43,7 +41,7 @@ public class LoginController {
 		
 		System.out.println("Login success");
 		model.addAttribute("msg", "User successfully logged in");
-		return "Login"; // return to admin page
+		return "index"; // return to admin page
 	}
 	
 	@RequestMapping("/logout")
@@ -57,5 +55,3 @@ public class LoginController {
 		return mv;
 	}
 }
-
-

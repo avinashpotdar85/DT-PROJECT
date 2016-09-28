@@ -7,14 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "product")
 @Component
 public class Product {
-
+	
 
 
 	@Id
@@ -23,6 +25,19 @@ public class Product {
 	private String description;
 	private double price;
 	private String category_id;
+
+	
+	@Transient
+    private MultipartFile itemImage;
+
+	
+	
+	public MultipartFile getItemImage() {
+		return itemImage;
+	}
+	public void setItemImage(MultipartFile itemImage) {
+		this.itemImage = itemImage;
+	}
 	public String getCategory_id() {
 		return category_id;
 	}

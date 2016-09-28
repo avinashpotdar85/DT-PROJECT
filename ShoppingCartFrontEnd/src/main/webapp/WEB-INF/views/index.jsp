@@ -20,21 +20,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="<c:url value="resources/css/bootstrap.css"/>" rel='stylesheet' type='text/css' />
+<link href="<c:url value="/resources/css/bootstrap.css"/>" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Custom Theme files -->
-<link href="<c:url value="resources/css/style.css"/>" rel='stylesheet' type='text/css' />
+<link href="<c:url value="/resources/css/style.css"/>" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
-<link href="<c:url value="resources/fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700"/>" rel='stylesheet' type='text/css'>
-<link href="<c:url value="resources/fonts.googleapis.com/css?family=Dorsa"/> "rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="<c:url value="resources/js/jquery-1.11.1.min.js"/>"></script>
+<link href="<c:url value="/resources/fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700"/>" rel='stylesheet' type='text/css'>
+<link href="<c:url value="/resources/fonts.googleapis.com/css?family=Dorsa"/> "rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery-1.11.1.min.js"/>"></script>
 <!-- start menu -->
-<link href="<c:url value="resources/css/megamenu.css"/>" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="<c:url value="resources/js/megamenu.js"/>"></script>
+<link href="<c:url value="/resources/css/megamenu.css"/>" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="<c:url value="/resources/js/megamenu.js"/>"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<script src="<c:url value="resources/js/jquery.easydropdown.js"/>"> </script>
-<script src="<c:url value="resources/js/simpleCart.min.js"/>"> </script>
+<script src="<c:url value="/resources/js/jquery.easydropdown.js"/>"> </script>
+<script src="<c:url value="/resources/js/simpleCart.min.js"/>"> </script>
 
 
 <!--  <meta http-equiv="refresh" content="0; URL=./onLoad" /> -->  
@@ -69,19 +69,30 @@ color:blue
 	float: left;
 	height: 25px;
 	padding: 0 25px;
-	color: #999;
+	color: #fff;   /* it was earlier 999*/
 	text-transform: uppercase;
-	font: bold 12px/25px Arial, Helvetica;
+	font: bold 18px/25px Arial, Helvetica;  /* it was 12px */
 	text-decoration: none;
 	text-shadow: 0 1px 0 #000;
 }
 
 #menu li:hover>a {
 	color: #fafafa;
+	background:#F9D9BE; /*i added this*/
+	 
+  /* padding: 10px 20px;
+  font-size: 1em;
+  
+  text-decoration: none;
+  
+  text-align: center; */
+  
+	
 }
 
 * html #menu li a:hover { /* IE6 */
 	color: #fafafa;
+	
 }
 
 #menu li:hover>ul {
@@ -139,6 +150,7 @@ color:blue
 #menu ul a:hover {
 	background-color: #0186ba;
 	background-image: linear-gradient(#04acec, #0186ba);
+	
 }
 
 #menu ul li:first-child a {
@@ -207,17 +219,20 @@ color:blue
 				</select>
 			 </div> -->
 
-<li class="divider-vertical"></li>
+
   <c:if test="${pageContext.request.userPrincipal.name != null}">
 <c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
-<li><a href="<c:url value="/user/cart" />">Cart</a></li>
+<div class= "linking">
+<a href="<c:url value="/myCart" />">Cart</a>
 </c:if>
 <c:if test="${pageContext.request.userPrincipal.name  == 'Admin'}">
-<li><a href="<c:url value="/Admin" />">View Inventory</a></li>
-<li><a href="<c:url value="/admin/user" />">View Customer</a></li>
+<div class= "linking">
+<a href="<c:url value="/Admin" />">View Inventory</a>
+<%-- <a href="<c:url value="/admin/user" />">View Customer</a> --%>
 </c:if>
-<li><a>Hello, ${pageContext.request.userPrincipal.name}</a></li>
-<li><a href="<c:url value="/j_spring_security_logout" />">Sign Out</a></li>
+<a>Hello, ${pageContext.request.userPrincipal.name}</a>
+<a href="<c:url value="/j_spring_security_logout" />">Sign Out</a>
+</div>
 </c:if>​
 
 
@@ -250,8 +265,8 @@ color:blue
 				    </div>
 				 </div>
 				 --> <!----search-scripts---->
-				 <script src="<c:url value="resources/js/classie1.js"/>"></script>
-				<script src="<c:url value="resources/js/uisearch.js"/>"></script>
+				 <script src="<c:url value="/resources/js/classie1.js"/>"></script>
+				<script src="<c:url value="/resources/js/uisearch.js"/>"></script>
 				 
 				   <script>
 					 // new UISearch( document.getElementById( 'sb-search' ) );
@@ -266,13 +281,13 @@ color:blue
 		  <h1><a href="index.html"><span class="m_1">W</span>atches</a></h1>
 	   </div>
    	   <div class="menu">
-	     <ul class="megamenu skyblue">
+	    <%--  <ul class="megamenu skyblue">
 			<li><a class="color2" href="#">Mens</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Men</h4>
+							<%-- 	<h4>Men</h4>
 								<!-- <ul>
 									<li><a href="men.html">Watches</a></li>
 									<li><a href="men.html">watches</a></li>
@@ -426,7 +441,7 @@ color:blue
 											<span class="item-cat"><small><a href="#">watches</a></small></span>
 											<span class="price">29.99 $</span>
 										</div>
-										<div class="clearfix"> </div>
+ --%>		<!-- 								<div class="clearfix"> </div>
 									</li>
 								</ul>	
 							</div>												
@@ -437,23 +452,28 @@ color:blue
 				<li><a class="color10" href="brands.html">Brands</a></li>
 				<li class="active grid"><a class="color3" href="index.html">Sale</a></li>
 				<li><a class="color7" href="404.html">News</a></li>
-				<div class="clearfix"> </div>
-			</ul>
+				
+				
+				   <div>
+   
+ --%>   
+    -->
+    
+    			
 			</div>
 	        <div class="clearfix"> </div>
-	        </div>
-	    </div>
-   </div>
-   
-   
-   
-   
-   
-   
-   
-   <ul id="menu">
-		<c:forEach items="${categoryList}" var="category">
-			<li><a href=${category.name}>${category.name}</a>
+	        
+	  <br>
+	  <br> 
+	    
+	    
+	  <br>
+	  <br>     
+	        
+    <ul id="menu">
+    
+		<c:forEach   items="${categoryList}" var="category">
+			<li><a class="color7" href=${category.name}>${category.name}</a>
 				<ul>
 					<c:forEach items="${category.products}" var="product">
 
@@ -466,8 +486,27 @@ color:blue
 
 	</ul>
 	<hr color="red" size="5">
-	<br><br><br>
-	<div>
+	
+	
+	</div>
+    </tr>
+    
+    </div>
+   				
+				
+				<ul>
+				
+				
+				<div class="clearfix"> </div>
+			</ul>
+			
+	        
+	        </div>
+	    </div>
+   </div>
+   
+   
+   <div>
 		<c:if test="${!empty selectedProduct.name}">
 			<table>
 				<tr>
@@ -486,12 +525,48 @@ color:blue
 					<td align="left" >${selectedProduct.price}</td>
 					<td align="left" >${selectedProduct.category.name}</td>
 					<td align="left" >${selectedProduct.supplier.name}</td>
+					<td>	<img alt="" src="<c:url value="/resources/images/${selectedProduct.id}.png"/>" /> 
+			</td>
+	
+					<td>
+              
+               
+               <c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
+                  <a href="<c:url value='Buy/${selectedProduct.name}' />">Buy</a>
+				
+										<br>
+								
+								<a  class="acount-btn" href="<c:url value='myCart' />">Open Cart
+							</a>
+							<br>
+							
+				
+										
+							<a  
+ class="button bt1" href="<c:url value='addToCart/${selectedProduct.id}' />">Add to Cart
+							</a>
+	 						
+							</c:if>
+							</td>
+							
+				
+	
 				</tr>
-			</table>
-		</c:if>
+                
+                
+                
+		
+				
+				
+				</table>
+			
+			
+					</c:if>
+		<%@include file="/WEB-INF/views/FetchProducts.jsp" %>
+		
 	</div>
 	
-	   
+   
    
    
    
@@ -503,39 +578,39 @@ color:blue
     <div class="container">
     	<ul class="content-home">
            <li class="col-sm-4">
-              <a href="single.html" class="item-link" title="">
+              <a href="index" class="item-link" title="">
                 <div class="bannerBox">
-                   <img src="<c:url value="/resources/images/w1.jpg"/>"class="item-img" title="" alt="" width="100%" height="100%"></img>
+                   <img src="<c:url value="/resources/images/abt-1.jpg"/>"class="item-img" title="" alt="" width="100%" height="100%"></img>
                    <div class="item-html">
-                      <h3>Men's<span>Watches</span></h3>
+                     <!--  <h3>Men's<span>Watches</span></h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                      <button>Shop now!</button>
+                      <button>Shop now!</button> -->
                    </div>
                 </div>
               </a>
            </li>
            <li class="col-sm-4">
-              <a href="single.html" class="item-link" title="">
+              <a href="index" class="item-link" title="">
                 <div class="bannerBox">
-                   <img src="<c:url value="resources/images/w3.jpg"/>" class="item-img" title="" alt="" width="100%" height="100%"></img>
+                   <img src="<c:url value="resources/images/abt-2.jpg"/>" class="item-img" title="" alt="" width="100%" height="100%"></img>
                     
                    <div class="item-html">
-                      <h3>Men's<span>Watches</span></h3>
+                     <!--  <h3>Men's<span>Watches</span></h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                       <button>Shop now!</button>
-                   </div>
+                    --></div>
                 </div>
               </a>
            </li>
            <li class="col-sm-4">
-              <a href="single.html" class="item-link" title="">
+              <a href="index" class="item-link" title="">
                 <div class="bannerBox">
-                   <img src="<c:url value="resources/images/w2.jpg"/>" class="item-img" title="" alt="" width="100%" height="100%"></img>
+                   <img src="<c:url value="resources/images/abt-3.jpg"/>" class="item-img" title="" alt="" width="100%" height="100%"></img>
                    <div class="item-html">
-                      <h3>Women's<span>Watches</span></h3>
+                     <!--  <h3>Women's<span>Watches</span></h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                       <button>Shop now!</button>
-                   </div>
+                    --></div>
                 </div>
               </a>
            </li> 
@@ -545,7 +620,7 @@ color:blue
     <div class="middle_content">
     	<div class="container">
     		<h2>Welcome</h2>
-    		<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+    		<p>Welcome to the wonderful world of watches.com. With advanced features of activating account and new login widgets, you will definitely have a great experience of using this,do subscribe for amazing offers and latest updates.</p>
     	</div>
     </div>
    	<div class="content_middle_bottom">
@@ -576,7 +651,7 @@ color:blue
 							
 							<img src="<c:url value="/resources/images/g2.jpg"/>"  class="img-responsive" alt="image02"/></img>
 							<div>							
-								<h3>port de bras <span>/ˌpôr də ˈbrä/</span></h3>
+								<h3>port de bras </h3>
 								<p>An exercise designed to develop graceful movement and disposition of the arms</p>
 							</div>
 							<a href="#page" class="lb-close">x Close</a>
@@ -592,7 +667,7 @@ color:blue
 							
 							<img src="<c:url value="/resources/images/g3.jpg"/>"  class="img-responsive" alt="image03"/></img>
 							<div>							
-								<h3>pli·é <span>/plēˈā/</span></h3>
+								<h3>pli·é </h3>
 								<p>A movement in which a dancer bends the knees and straightens them again</p>
 							</div>
 							<a href="#page" class="lb-close">x Close</a>
@@ -608,7 +683,7 @@ color:blue
 							<img src="<c:url value="/resources/images/g4.jpg"/>"  class="img-responsive" alt="image04"/></img>
 							
 							<div>							
-								<h3>a·da·gio <span>/əˈdäjō/</span></h3>
+								<h3>a·da·gio </h3>
 								<p>A movement or composition marked to be played adagio</p>
 							</div>
 							<a href="#page" class="lb-close">x Close</a>
@@ -624,7 +699,7 @@ color:blue
 							
 							<img src="<c:url value="/resources/images/g5.jpg"/>"  class="img-responsive" alt="image05"/></img>
 							<div>							
-								<h3>frap·pé<span>/fraˈpā/</span></h3>
+								<h3>frap·pé<span></h3>
 								<p>Involving a beating action of the toe of one foot against the ankle of the supporting leg</p>
 							</div>
 							<a href="#page" class="lb-close">x Close</a>
@@ -639,7 +714,7 @@ color:blue
 							
 							<img src="<c:url value="/resources/images/g6.jpg"/>"  class="img-responsive" alt="image06"/></img>
 							<div>							
-								<h3>glis·sade <span>/gliˈsäd/</span></h3>
+								<h3>glis·sade </h3>
 								<p>One leg is brushed outward from the body, which then takes the weight while the second leg is brushed in to meet it</p>
 							</div>
 							<a href="#page" class="lb-close">x Close</a>
@@ -655,7 +730,7 @@ color:blue
 							
 							<img src="<c:url value="/resources/images/g7.jpg"/>"  class="img-responsive" alt="image07"/></img>
 							<div>							
-								<h3>je·té <span>/zhə-ˈtā/</span></h3>
+								<h3>je·té</h3>
 								<p>A springing jump made from one foot to the other in any direction</p>
 							</div>
 							<a href="#page" class="lb-close">x Close</a>
@@ -671,7 +746,7 @@ color:blue
 							
 							<img src="<c:url value="/resources/images/g8.jpg"/>"  class="img-responsive" alt="image08"/></img>
 							<div>							
-								<h3>pi·qué <span>/pēˈkā/</span></h3>
+								<h3>pi·qué </h3>
 								<p>Strongly pointed toe of the lifted and extended leg sharply lowers to hit the floor then immediately rebounds upward</p>
 							</div>
 							<a href="#page" class="lb-close">x Close</a>
@@ -687,7 +762,7 @@ color:blue
    	 <div class="container">
    	 	<div class="newsletter">
 			<h3>Newsletter</h3>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+			<p>Get to know  the latest updates regarding this watches store by providing e-mail id and do subscribe.</p>
 			<form>
 			  <input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
 			  <input type="submit" value="SUBSCRIBE">
@@ -696,10 +771,10 @@ color:blue
    		<div class="cssmenu">
 		   <ul>
 		<!--  	<li class="active"><a href="#">Privacy</a></li> -->
-			<li><a href="#">Terms</a></li>
+			<!-- <li><a href="#">Terms</a></li>
 			<li><a href="#">Shop</a></li>
 			<li><a href="#">About</a></li>
-			<li><a href="contact.html">Contact</a></li>
+			 --><li><a href="contact">Contact</a></li>
 		  </ul>
 		</div>
 		<ul class="social">

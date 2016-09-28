@@ -46,7 +46,7 @@ public class TestCaseSupplier {
 	public void addSupplierTestCase()
 	{
 		supplier.setId("PRD 001");
-		supplier.setName("samsung");
+		supplier.setName("FASTRACK");
 		supplier.setAddress("HYD");
 		supplierDAO.saveOrUpdate(supplier);
 		boolean flag=supplierDAO.add(supplier);
@@ -57,7 +57,7 @@ public class TestCaseSupplier {
 	@Test
 	public void updateSupplierTestCase()
 	{
-		supplier.setId("MOB 001");
+		supplier.setId("PRD 001");
 		
 		assertTrue(true);
 		
@@ -66,12 +66,12 @@ public class TestCaseSupplier {
 	@Test
 	public void listUserSupplierTestCase()
 	{
-		assertEquals("addProductTestCase",supplierDAO.list().size(), 0);
+		assertEquals("addProductTestCase",supplierDAO.list().size(), 4);
 	}
 	@Test
 	public void getSupplierTestCase()
 	{
-		assertEquals("updateProductTestCase",supplierDAO.get("MOB 001"), null);
+		assertEquals("updateProductTestCase",supplierDAO.get("PRD 001"), null);
 	}
 	
 	

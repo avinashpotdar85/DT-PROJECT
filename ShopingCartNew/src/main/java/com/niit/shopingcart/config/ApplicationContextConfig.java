@@ -18,7 +18,9 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-//import com.niit.shopingcart.dao.CartDAO;
+import com.niit.shopingcart.dao.CartDAO;
+import com.niit.shopingcart.dao.CartDAOImpl;
+import com.niit.shopingcart.dao.CartDAO;
 //import com.niit.shopingcart.dao.CartDAOImpl;
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.dao.CategoryDAOImpl;
@@ -26,9 +28,7 @@ import com.niit.shopingcart.model.Cart;
 import com.niit.shopingcart.model.Category;
 import com.niit.shopingcart.model.Product;
 import com.niit.shopingcart.model.Supplier;
-import com.niit.shopingcart.model.User;
-import com.niit.shopingcart.model.UserDetails;
-import com.niit.shopingcart.model.shipping;
+//import com.niit.shopingcart.model.UserDetails;
 
 
 @Configuration
@@ -41,7 +41,7 @@ public class ApplicationContextConfig {
 	public DataSource getH2DataSource() {
 	    	DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	    	dataSource.setDriverClassName("org.h2.Driver");
-			dataSource.setUrl("jdbc:h2:tcp://localhost/~/db");
+			dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
 				
 			dataSource.setUsername("sa");
 			dataSource.setPassword("sa");
@@ -70,8 +70,8 @@ public class ApplicationContextConfig {
     	sessionBuilder.addAnnotatedClasses(Supplier.class);
     	//sessionBuilder.addAnnotatedClasses(User.class);
     	sessionBuilder.addAnnotatedClasses(Product.class);
-    //	sessionBuilder.addAnnotatedClasses(Cart.class);
-    	sessionBuilder.addAnnotatedClasses(UserDetails.class);
+    	sessionBuilder.addAnnotatedClasses(Cart.class);
+  //  	sessionBuilder.addAnnotatedClasses(UserDetails.class);
     	//sessionBuilder.addAnnotatedClasses(shipping.class);
     	return sessionBuilder.buildSessionFactory();
     }
@@ -92,10 +92,10 @@ public class ApplicationContextConfig {
     	return new CategoryDAOImpl(sessionFactory);
     }
     
-    /*@Autowired
+    @Autowired
     @Bean(name = "cartDao")
     public CartDAO getCartDao(SessionFactory sessionFactory) {
     	return new CartDAOImpl(sessionFactory);
     }
-*/
+
 }

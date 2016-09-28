@@ -40,7 +40,7 @@ public void categoryListTestCase()
 	List<Category> list = categoryDAO.list();
 	int rowCount = list.size();
 	
-	assertEquals("Category List Test Case",rowCount,5);
+	assertEquals("Category List Test Case",rowCount,4);
 	
 }
 
@@ -77,7 +77,7 @@ public void updateCategoryTestCase()
 @Test
 public void listCategoryTestCase()
 {
-	assertEquals("addProductTestCase",categoryDAO.list().size(), 0);
+	assertEquals("addProductTestCase",categoryDAO.list().size(), 4);
 }
 @Test
 public void getCategoryTestCase()

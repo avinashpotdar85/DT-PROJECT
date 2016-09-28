@@ -2,9 +2,13 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Product Page</title>
+<title>Category Page</title>
 <style type="text/css">
 .tg {
 	border-collapse: collapse;
@@ -22,7 +26,7 @@
 	word-break: normal;
 	border-color: #ccc;
 	color: #333;
-	background-color: #fff;
+	background-color: #9CB071;
 }
 
 .tg th {
@@ -42,9 +46,17 @@
 .tg .tg-4eph {
 	background-color: #f9f9f9
 }
+
+body{
+background-color:#4E8975	;
+}
+
 </style>
+    
 </head>
 <body>
+
+
 	<h1>Add a Product</h1>
 
 	<%--  <form method="POST" action="uploadFile" enctype="multipart/form-data">
@@ -65,7 +77,7 @@
 
 	<c:url var="addAction" value="/manageProducts/add"></c:url>
 
-	<form:form action="${addAction}" commandName="product"  enctype="multipart/form-data">
+	<form:form action="${addAction}" commandName="product" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td><form:label path="id">
@@ -78,7 +90,7 @@
 					</c:when>
 
 					<c:otherwise>
-						<td><form:input path="id" pattern=".{6,7}" required="true"
+						<td><form:input path="id" pattern="{6,7}" required="true"
 								title="id should contains 6 to 7 characters" /></td>
 					</c:otherwise>
 				</c:choose>
@@ -119,14 +131,14 @@
 				<td><form:select path="category.name" items="${categoryList}"
 						itemValue="name" itemLabel="name" /></td>
 			</tr>
-			
 			<tr>
 			<td>
-			upload picture
+			Upload Picture
 			</td>
 			<td>
 			<form:input id="itemimage" path="itemImage" type="file" class="form:input-large" />
 			</td>
+			
 			</tr>
 			<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">
@@ -164,10 +176,11 @@
 					<td>${product.supplier.name}</td>
 					<td><a href="<c:url value='manageProducts/edit/${product.id}' />">Edit</a></td>
 					<td><a href="<c:url value='manageProducts/remove/${product.id}' />">Delete</a></td>
-			<td><img src="<c:url value="/resources/images/${product.id}.png" /> " alt="image"/></td>​
+					<td><img src="<c:url value="/resources/images/${product.id}.png" /> " alt="image"/> </td>
 				</tr>
 			</c:forEach>
 		</table>
 	</c:if>
-</body>
-</html>
+
+	
+</body></html>

@@ -21,15 +21,15 @@ public class SupplierTest {
 	
 	SupplierDAO supplierDAO = (SupplierDAO)  context.getBean("supplierDAO");
 	s.setId("SUP_001");
-	s.setName("Reliance");
+	s.setName("Flipcart");
 	s.setAddress("Bangalore");
 	supplierDAO.saveOrUpdate(s);
 	s.setId("SUP_002");
-	s.setName("BigBazaar");
+	s.setName("amazon");
 	s.setAddress("Chennai");
 	supplierDAO.saveOrUpdate(s);
 	s.setId("SUP_003");
-	s.setName("Croma");
+	s.setName("Snapdeal");
 	s.setAddress("Hyderabad");
 	supplierDAO.saveOrUpdate(s);
 	List<Supplier>  list =    supplierDAO.list();

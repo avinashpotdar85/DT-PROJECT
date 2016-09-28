@@ -1,9 +1,8 @@
-package com.niit.shopingcart.dao;
+/*package com.niit.shopingcart.dao;
 
 import java.util.List;
 
 import com.niit.shopingcart.model.UserDetails;
-import com.niit.shopingcart.model.shipping;
 
 public interface UserDetailsDAO {
 
@@ -18,10 +17,9 @@ public interface UserDetailsDAO {
 
 	public String delete(String id);
 
-	public void saveOrUpdate(shipping ship);
 
 	public boolean add(UserDetails userDetails);
 
 	public boolean delete(UserDetails userDetails);
 
-}
+}*/

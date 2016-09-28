@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</select>
 			 </div> -->
 
-<li class="divider-vertical"></li>
+<%-- <li class="divider-vertical"></li>
   <c:if test="${pageContext.request.userPrincipal.name != null}">
 <c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
 <li><a href="<c:url value="/user/cart" />">Cart</a></li>
@@ -69,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <li><a href="<c:url value="/j_spring_security_logout" />">Sign Out</a></li>
 </c:if>​
 
-
+ --%>
 
 
 			 

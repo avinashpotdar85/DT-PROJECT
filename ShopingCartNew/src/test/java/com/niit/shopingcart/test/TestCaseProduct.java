@@ -32,8 +32,8 @@ public class TestCaseProduct {
 	@Test
 	public void deleteProductTestCase()
 	{
-		product.setId("PRD 001");
-		boolean flag=productDAO .delete(product);
+		//product.setId("PRD 001");
+		boolean flag=productDAO .delete("PRD 001");
 		assertEquals("delete ProductTestCase", flag,false);
 	}
 	
@@ -42,6 +42,9 @@ public class TestCaseProduct {
 	{
 		product.setId("PRD 001");
 		product.setName("samsung");
+		product.setDescription("This is samsung Tablet");
+		product.setSupplier_id("SUP_002");
+		product.setCategory_id("CAT_002");
 		product.setPrice(2000);
 		productDAO.saveOrUpdate(product);
 		boolean flag=productDAO.add(product);
@@ -61,7 +64,7 @@ public class TestCaseProduct {
 	@Test
 	public void listProductTestCase()
 	{
-		assertEquals("addProductTestCase",productDAO.list().size(), 0);
+		assertEquals("addProductTestCase",productDAO.list().size(), 4);
 	}
 	@Test
 	public void getProductTestCase()

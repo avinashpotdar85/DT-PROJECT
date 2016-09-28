@@ -260,6 +260,14 @@ ul.header_user_info {
 	padding:0;
 	min-height: 30px;
 }
+.linking a{
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size:1.2em;
+      font-weight:450;
+      color:#ffffff;
+	
+	
+}
 ul.header_user_info a{
 	color:#fff;
 }
@@ -2778,4 +2786,26 @@ a.b-home {
 .grid_1 {
   margin-bottom: 1em;
 }
+
+a.button{
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	border:1px solid #ffffff; 
+	display: inline-block;
+	text-decoration: none;
+	background: #303030;
+	margin: 5px 0;
+	text-transform: uppercase;
+	color: #fff;
+}
+a.button:hover{opacity: 0.9;}
+
+a.button.bt1 {background: #434343;color: #ffffff;padding: 5px 20px;width: 100%;text-align: center;border:1px solid #474747; }
+a.button.bt2 {background: #0000ff;color: #ffffff;}
+
+
+
+
+
 }

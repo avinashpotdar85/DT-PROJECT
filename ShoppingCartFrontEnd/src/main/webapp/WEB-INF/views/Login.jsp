@@ -1,98 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-
-
-
-	<section id="container">
-	<div class="zerogrid">
-		<div class="wrap-container clearfix">
-			<div id="main-content">
-				<div class="wrap-box">
-					<!--Start Box-->
-
-					<div class="col-2-3">
-						<div class="wrap-col">
-							<div class="contact">
-								<div class="contact-header">
-									<h5>Login Form</h5>
-								</div>
-								<div id="contact_form">
-
-
-									<form name="loginForm"
-										action="<c:url value='/j_spring_security_check' />"
-										method="post">
-										<c:if test="${not empty error}">
-											<div class="error" style="color: #ff0000;">${error}</div>
-										</c:if>
-										<div class="span9 center">
-											<c:if test="${not empty msg}">
-												<div class="msg">${msg}
-													<br>
-													<br>
-												</div>
-											</c:if>
-
-
-
-
-
-
-		<!-- <!-- 	<form name="form1" id="ff" method="post" action="LoginPage">
-		 --> -->										<label class="row">
-													<div class="col-1-2">
-														<div class="wrap-col">
-															<input type="email" name="email" id="email"
-																placeholder="Enter email" required="required" />
-														</div>
-													</div>
-													<div class="col-1-2">
-														<div class="wrap-col">
-															<input type="text" name="password" id="name"
-																placeholder="Enter password" required="required" />
-														</div>
-													</div>
-
-												</label>
-												<center>
-													<input class="sendButton" type="submit" name="Submit"
-														value="Submit">
-												</center>
-											</form>
-										</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-1-3">
-							<div class="wrap-col">
-								<div class="contact-header"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<a href="Register1">Register</a>
-	<!-- <!-- <p> this is login page</p>
-
-Enter user name:<input type="text"> <br>
-
-Enter password:<input type="password"> <br>
-<input type="submit" value="submit">
- -->
-	--> --%>
-<!-- </body>
-</html> -->
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     
@@ -128,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    	  <div class="container">
    	  	<div class="header_top">
    	  	   <div class="header_top_left">
-	  	     <!-- <!--  <div class="box_11"><a href="checkout.html">
+	  	     <%--  <div class="box_11"><a href="checkout.html">
 		      <h4><p>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><img src="images/bag.png" alt=""/><div class="clearfix"> </div></h4>
 		      </a></div>
 	          <p class="empty"><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
@@ -142,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<option value="2">Euro</option>
 				</select>
 			 </div>
-			 --> --> <ul class="header_user_info">
+			  <ul class="header_user_info">
 			  <a class="login" href="login1">
 				<i class="user"> </i> 
 				<li class="user_desc">My Account</li>
@@ -159,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </form>
 				    </div>
 				 </div>
-				 <!----search-scripts---->
+	 --%>			 <!----search-scripts---->
 				 <script src="<c:url value="resources/js/classie1.js"/>"></script>
 				 <script src="<c:url value="resources/js/uisearch.js"/>"></script>
 				 
@@ -177,12 +84,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	     </div>
 	    <div class="menu">
 	     <ul class="megamenu skyblue">
-			<li><a class="color2" href="#">Mens</a>
+			<%-- <li><a class="color2" href="#">Mens</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Men</h4>
+								<h4></h4>
 								<ul>
 									<li><a href="men.html">Watches</a></li>
 									<li><a href="men.html">watches</a></li>
@@ -199,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Women</h4>
+								<h4></h4>
 								<ul>
 									<li><a href="men.html">Watches</a></li>
 									<li><a href="men.html">Outerwear</a></li>
@@ -258,13 +165,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					  </div>
 					</div>
-			</li>
-			<li><a class="color4" href="#">womens</a>
+			</li> --%>
+			<%-- <li><a class="color4" href="#">womens</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Men</h4>
+								<h4></h4>
 								<ul>
 									<li><a href="men.html">Watches</a></li>
 									<li><a href="men.html">watches</a></li>
@@ -341,11 +248,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					  </div>
 					</div>
-				</li>				
-				<li><a class="color10" href="brands.html">Brands</a></li>
+				</li> --%>				
+				<!-- <li><a class="color10" href="brands.html">Brands</a></li>
 				<li><a class="color3" href="index.html">Sale</a></li>
 				<li><a class="color7" href="404.html">News</a></li>
-				<div class="clearfix"> </div>
+				 --> <div class="clearfix"> </div>
 			</ul>
 			</div>
 	        <div class="clearfix"> </div>
@@ -383,7 +290,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		   </form>
 		</div>
-		<div class="col-md-5 left-account ">
+		<%-- <div class="col-md-5 left-account ">
 			<a href="single.html">
 			<img src="<c:url value="resources/images/s4.jpg"/>"  alt=""/>
 			</a>
@@ -393,10 +300,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a href="register.html" class="create">Create an account</a>
 			<div class="clearfix"> </div>
 		</div>
-	    <div class="clearfix"> </div>
+	     --%><div class="clearfix"> </div>
 	  </div>
    </div>
-   <div class="map">
+   <%-- <div class="map">
 	   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
    </div>
    <div class="footer">
@@ -428,6 +335,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            <p> &copy; 2015 Watches. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
 	    </div>
    	</div>
-   </div>
+   </div> --%>
 </body>
 </html>	

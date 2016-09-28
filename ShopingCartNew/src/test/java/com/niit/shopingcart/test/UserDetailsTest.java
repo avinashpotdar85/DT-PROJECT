@@ -1,4 +1,4 @@
-package com.niit.shopingcart.test;
+/*package com.niit.shopingcart.test;
 
 import java.util.List;
 
@@ -41,3 +41,4 @@ public static void main(String[] args) {
 	}
 
 }
+*/

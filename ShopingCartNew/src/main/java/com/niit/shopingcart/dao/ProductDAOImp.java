@@ -3,6 +3,7 @@ package com.niit.shopingcart.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +42,17 @@ public class ProductDAOImp implements ProductDAO {
 }
 
 	@Transactional
-	public void delete(String id) {
-		Product ProductToDelete = new Product();
+	public boolean delete(String id) {
+		try{Product ProductToDelete = new Product();
 		ProductToDelete.setId(id);
 		sessionFactory.getCurrentSession().delete(ProductToDelete);
+		return true;
+	}
+		catch(HibernateException e){
+		e.printStackTrace();
+		return false;
+		}
+		
 	}
 
 	@Transactional
@@ -61,6 +69,22 @@ public class ProductDAOImp implements ProductDAO {
 		
 		return null;
 	}
+	
+	@Transactional
+	public Product getByName(String name) {
+		String hql = "from Product where name='" + name+"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		System.out.println("Inside productDAO get");
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>) query.list();
+		
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct.get(0);
+		}
+		
+		return null;
+	}
+
 
 	public boolean delete(Product product) {
 		try{
@@ -93,4 +117,6 @@ public class ProductDAOImp implements ProductDAO {
 		return false;
 		}
 	}
+
+	
 }

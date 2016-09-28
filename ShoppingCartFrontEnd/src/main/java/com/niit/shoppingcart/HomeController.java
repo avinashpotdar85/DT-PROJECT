@@ -4,10 +4,13 @@ package com.niit.shoppingcart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niit.shopingcart.dao.CategoryDAO;
+import com.niit.shopingcart.dao.ProductDAO;
 import com.niit.shopingcart.model.Category;
+import com.niit.shopingcart.model.Product;
 
 @Controller
 public class HomeController {
@@ -17,34 +20,58 @@ private CategoryDAO categoryDAO;
 @Autowired
 private Category category;
 
+@Autowired
+private ProductDAO productDAO;
+
 	//if you want to navigate
 	
 	
 	@RequestMapping("/")
-	public String Home(Model model)
+	public String Home(Model model,@ModelAttribute("selectedProduct") Product selectedProduct)
 	{
 		model.addAttribute("category",category);
 		model.addAttribute("categoryList",this.categoryDAO.list());
-		return "/index";
+		model.addAttribute("productList",this.productDAO.list());
+		if(selectedProduct!=null)
+			model.addAttribute("selectedProduct",selectedProduct);
+		else
+			System.out.println("OBJECT NULL");
+		
+		return "index";
 	}
-/*	@RequestMapping("/admin")
-	public String getadmin()
-	{
-		return"adminPage";
-	}
-*/	@RequestMapping("/index")
+	@RequestMapping("/index")
 	public String reg()
 	{
 		return "index";
 	}
-/*
-	@RequestMapping("/login")
+
+	@RequestMapping("/contact")
 	public String login()
 	{
-		return "Login";
+		return "contact";
 	}
-*/	
+	
 	 
+	
+	
+	@RequestMapping("/Cthanks")
+	public String loadLoginPage3() {
+		return "Cthanks";
+	}
+	@RequestMapping("/Logout")
+	public String loadLoginPage6() {
+		return "Logout";
+	}
+	
+	@RequestMapping("/Shipping")
+	public String loadLoginPage7() {
+		return "Shipping";
+	}
+	@RequestMapping("/Sthanks")
+	public String loadLoginPage8() {
+		return "Sthanks";
+	}
+	
 	
 	/*
 	@RequestMapping("/LoginPage")

@@ -41,17 +41,18 @@ public class SupplierDAOImpl implements SupplierDAO {
 	}
 
 	@Transactional
-	public String  delete(String id) {
+	public boolean  delete(String id) {
 		Supplier supplier = new Supplier();
 		supplier.setId(id);
 		try {
 			sessionFactory.getCurrentSession().delete(supplier);
+			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
-			return e.getMessage();
+			return false;
 			
 		}
-		return null;	
+			
 		}
 
 	@Transactional
@@ -93,5 +94,6 @@ public class SupplierDAOImpl implements SupplierDAO {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 }

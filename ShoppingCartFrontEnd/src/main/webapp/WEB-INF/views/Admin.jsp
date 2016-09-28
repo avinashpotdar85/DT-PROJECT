@@ -59,20 +59,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</select>
 			 </div> -->
 
-<li class="divider-vertical"></li>
-  <c:if test="${pageContext.request.userPrincipal.name != null}">
-<c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
-<li><a href="<c:url value="/user/cart" />">Cart</a></li>
-</c:if>
-<c:if test="${pageContext.request.userPrincipal.name  == 'Admin'}">
-<li><a href="<c:url value="/Admin" />">View Inventory</a></li>
-<li><a href="<c:url value="/admin/user" />">View Customer</a></li>
-</c:if>
-<li><a>Hello, ${pageContext.request.userPrincipal.name}</a></li>
-<li><a href="<c:url value="/j_spring_security_logout" />">Sign Out</a></li>
-</c:if>​
-
-
 
 
 			 

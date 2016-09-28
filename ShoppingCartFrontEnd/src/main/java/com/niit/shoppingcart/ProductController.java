@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.dao.ProductDAO;
@@ -22,6 +23,7 @@ import com.niit.shopingcart.dao.SupplierDAO;
 import com.niit.shopingcart.model.Category;
 import com.niit.shopingcart.model.Product;
 import com.niit.shopingcart.model.Supplier;
+import com.niit.util.Util;
 
 
 
@@ -62,6 +64,10 @@ public class ProductController {
 	@RequestMapping(value = "/manageProducts/add", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute("product") Product product,Model model,HttpServletRequest request) {
 
+		String newID=Util.removeComma(product.getId());
+		product.setId(newID);
+
+		
 		Category category = categoryDAO.getByName(product.getCategory().getName());
 		//categoryDAO.saveOrUpdate(category);
 		System.out.println(category.getId() + ":" + category.getName() + ":" + category.getDescription());
@@ -85,8 +91,8 @@ public class ProductController {
 		productDAO.saveOrUpdate(product);
 
         MultipartFile itemImage = product.getItemImage();
-        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\"+product.getId()+".png");
+      //  String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get("F:\\front end\\ShoppingCartFrontEnd\\src\\main\\webapp\\WEB-INF\\resources\\images\\"+product.getId()+".png");
 
 
         if (itemImage != null && !itemImage.isEmpty()) {
@@ -131,5 +137,21 @@ public class ProductController {
 		model.addAttribute("product", this.productDAO.get(id));
 		model.addAttribute("listProducts", this.productDAO.list());
 		return "product";
+	}
+	
+	
+	@RequestMapping("product/get/{id}")
+	public String getSelectedProduct(@PathVariable("id") String id, Model model,RedirectAttributes redirectAttributes) {
+		System.out.println("getSelectedProduct");
+		
+		model.addAttribute("selectedProduct", this.productDAO.get(id));
+		
+		redirectAttributes.addFlashAttribute("selectedProduct", this.productDAO.get(id));
+		model.addAttribute("categoryList", this.categoryDAO.list());
+		
+		
+		model.addAttribute("productList", this.productDAO.list());
+		return "redirect:/";
+	
 	}
 }

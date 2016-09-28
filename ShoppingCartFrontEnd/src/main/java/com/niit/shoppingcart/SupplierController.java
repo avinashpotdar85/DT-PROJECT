@@ -13,6 +13,7 @@ package com.niit.shoppingcart;
 	import org.springframework.web.bind.annotation.RequestMethod;
 	import com.niit.shopingcart.dao.SupplierDAO;
 import com.niit.shopingcart.model.Supplier;
+import com.niit.util.Util;
 
 	
 
@@ -39,6 +40,10 @@ import com.niit.shopingcart.model.Supplier;
 		@RequestMapping(value= "/manageSuppliers/add", method = RequestMethod.POST)
 		public String addSupplier(@ModelAttribute("supplier") Supplier supplier){
 			
+			
+			String newID=Util.removeComma(supplier.getId());
+			supplier.setId(newID);
+
 		
 				supplierDAO.saveOrUpdate(supplier);
 			
