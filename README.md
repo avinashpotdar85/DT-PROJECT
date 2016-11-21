@@ -1,5 +1,7 @@
 # DT-PROJECT
-************
+
+
+
 Name: shopping cart front end  and shopping cart backend
 
 Description:Its an e comerce website where the user can buy watches online.
